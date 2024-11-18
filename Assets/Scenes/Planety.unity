@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetPrefab: {fileID: 8036738428994830969, guid: 24978f579f6d5b84e92d2593e12a1650, type: 3}
-  numberOfPlanets: 10
-  spawnArea: {x: 2000, y: 2000, z: 2000}
+  numberOfPlanets: 50
+  spawnArea: {x: 3000, y: 3000, z: 3000}
 --- !u!4 &197277232
 Transform:
   m_ObjectHideFlags: 0
@@ -554,9 +554,9 @@ MonoBehaviour:
   - {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
   - {fileID: 141316, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
   - {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
-  numberOfAsteroids: 40
-  spawnArea: {x: 100, y: 100, z: 100}
-  speed: 5
+  numberOfAsteroids: 1000
+  spawnArea: {x: 3000, y: 3000, z: 3000}
+  speed: 10
 --- !u!4 &1509284506
 Transform:
   m_ObjectHideFlags: 0
