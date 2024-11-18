@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2919844894417146699}
   - component: {fileID: 8376284864398739532}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: PlanetaSzkielet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
