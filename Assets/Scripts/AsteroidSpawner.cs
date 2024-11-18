@@ -4,8 +4,8 @@ public class AsteroidSpawner : MonoBehaviour
 {
     public GameObject[] asteroidPrefabs; 
     public int numberOfAsteroids = 10; 
-    public Vector3 spawnArea = new Vector3(100, 100, 100); 
-    public float speed = 5f; 
+    public Vector3 spawnArea = new Vector3(100, 100, 100);
+    public float speed;
 
     void Start()
     {

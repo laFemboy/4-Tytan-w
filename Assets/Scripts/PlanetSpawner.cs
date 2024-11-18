@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlanetSpawner : MonoBehaviour
 {
-    public GameObject planetPrefab; 
-    public int numberOfPlanets = 5; 
+    public GameObject planetPrefab;
+    public int numberOfPlanets;
     public Vector3 spawnArea = new Vector3(100, 100, 100); 
 
     void Start()
@@ -23,6 +23,19 @@ public class PlanetSpawner : MonoBehaviour
             );
 
             Instantiate(planetPrefab, randomPosition, Quaternion.identity);
+
+            GameObject newPlanet = Instantiate(planetPrefab, randomPosition, Quaternion.identity);
+
+            Renderer renderer = newPlanet.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material.color = new Color(
+                    Random.Range(0f, 1f),
+                    Random.Range(0f, 1f),
+                    Random.Range(0f, 1f)
+                );
+            }
         }
+
     }
 }
