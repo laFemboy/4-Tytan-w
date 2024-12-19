@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Npcinteraction : MonoBehaviour
+public class NpcInteraction : MonoBehaviour
 {
     public GameObject dialogueUI; // UI dialogowe
-    public GameObject player; // Obiekt gracza
+    public GameObject player;
     public float interactionDistance = 3f; // Maksymalna odleg³oœæ interakcji
     private bool isDialogueActive = false;
 
@@ -11,38 +11,62 @@ public class Npcinteraction : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
-        if (distanceToPlayer <= interactionDistance) // Jeœli gracz jest w zasiêgu
+        // Obs³uga klawisza Escape
+        if (Input.GetKeyDown(KeyCode.Escape) && isDialogueActive)
+        {
+            CloseDialogue(); // Zamknij dialog
+        }
+
+        // Sprawdzenie odleg³oœci gracza i obs³uga klawisza E
+        if (distanceToPlayer <= interactionDistance)
         {
             if (Input.GetKeyDown(KeyCode.E)) // Naciœniêcie klawisza E
             {
-                isDialogueActive = !isDialogueActive; // Prze³¹cz dialog
-                dialogueUI.SetActive(isDialogueActive);
-                Time.timeScale = isDialogueActive ? 0 : 1; // Pauzuj grê
-
-                // Blokuj ruch i kamerê
-                var controller = player.GetComponent<FirstPersonController>();
-                controller.canMove = !isDialogueActive; // Blokada ruchu
-                controller.enableCameraRotation = !isDialogueActive; // Blokada kamery (dodane pole w skrypcie FirstPersonController)
-
-                // Poka¿/ukryj kursor
-                Cursor.lockState = isDialogueActive ? CursorLockMode.None : CursorLockMode.Locked;
-                Cursor.visible = isDialogueActive;
+                if (isDialogueActive)
+                {
+                    CloseDialogue(); // Wy³¹cz dialog
+                }
+                else
+                {
+                    OpenDialogue(); // W³¹cz dialog
+                }
             }
         }
         else if (isDialogueActive) // Jeœli gracz wyjdzie poza zasiêg
         {
-            isDialogueActive = false;
-            dialogueUI.SetActive(false); // Wy³¹cza UI dialogowe
-            Time.timeScale = 1; // Wznawia grê
-
-            // Odblokuj ruch i kamerê
-            var controller = player.GetComponent<FirstPersonController>();
-            controller.canMove = true;
-            controller.enableCameraRotation = true;
-
-            // Ukryj kursor
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            CloseDialogue(); // Zamknij dialog
         }
+    }
+
+    void OpenDialogue()
+    {
+        isDialogueActive = true;
+        dialogueUI.SetActive(true);
+        Time.timeScale = 0; // Pauzuj grê
+
+        // Blokuj ruch i kamerê
+        var controller = player.GetComponent<FirstPersonController>();
+        controller.canMove = false; // Blokada ruchu
+        controller.enableCameraRotation = false; // Blokada kamery
+
+        // Poka¿ kursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void CloseDialogue()
+    {
+        isDialogueActive = false;
+        dialogueUI.SetActive(false);
+        Time.timeScale = 1; // Wznów grê
+
+        // Odblokuj ruch i kamerê
+        var controller = player.GetComponent<FirstPersonController>();
+        controller.canMove = true; // Odblokuj ruch
+        controller.enableCameraRotation = true; // Odblokuj kamerê
+
+        // Ukryj kursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
