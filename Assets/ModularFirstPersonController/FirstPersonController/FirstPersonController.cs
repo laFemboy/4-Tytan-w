@@ -17,6 +17,8 @@ using UnityEngine.UI;
 public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
+    public bool canMove = true;
+    public bool enableCameraRotation = true;
 
     #region Camera Movement Variables
 
@@ -202,10 +204,11 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if (!playerCanMove) return;
         #region Camera
 
         // Control camera movement
-        if(cameraCanMove)
+        if (cameraCanMove && enableCameraRotation)
         {
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
@@ -225,6 +228,7 @@ public class FirstPersonController : MonoBehaviour
             transform.localEulerAngles = new Vector3(0, yaw, 0);
             playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         }
+
 
         #region Camera Zoom
 
@@ -366,6 +370,7 @@ public class FirstPersonController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!playerCanMove) return;
         #region Movement
 
         if (playerCanMove)
