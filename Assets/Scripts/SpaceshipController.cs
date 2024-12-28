@@ -11,6 +11,13 @@ public class SpaceshipController : MonoBehaviour
     private float currentSpeed;
     private float currentRollVelocity;
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+
     void Update()
     {
         currentSpeed = Input.GetKey(KeyCode.LeftShift) ? moveSpeed * sprintMultiplier : moveSpeed;
@@ -26,7 +33,7 @@ public class SpaceshipController : MonoBehaviour
 
         float pitch = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
         float yaw = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-        float roll = 0;
+        //float roll = 0;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
