@@ -2,39 +2,52 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
-    public float moveSpeed = 30f;          
-    public float sprintMultiplier = 2f;   
-    public float rotationSpeed = 50f;
+    public float moveSpeed;          
+    public float sprintMultiplier;   
+    public float rotationSpeed;
+    public float rollAcceleration;
+    public float rollDamping;
+
+    private float currentSpeed;
+    private float currentRollVelocity;
 
     void Update()
     {
-        float moveForwardBackward = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        currentSpeed = Input.GetKey(KeyCode.LeftShift) ? moveSpeed * sprintMultiplier : moveSpeed;
 
-        if (Input.GetKey(KeyCode.LeftShift))
-            moveForwardBackward *= sprintMultiplier;
-
-        float moveLeftRight = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = 0;
+        float moveVertical = Input.GetAxis("Vertical");
         float moveUpDown = 0;
 
-        if (Input.GetKey(KeyCode.Q))
-            moveUpDown = moveSpeed * Time.deltaTime;
-        else if (Input.GetKey(KeyCode.E))
-            moveUpDown = -moveSpeed * Time.deltaTime;
+        Vector3 movement = new Vector3(moveHorizontal, moveUpDown, moveVertical);
+        transform.Translate(movement * currentSpeed * Time.deltaTime, Space.Self);
 
-        Vector3 movement = transform.forward * moveForwardBackward +
-                           transform.right * moveLeftRight +
-                           transform.up * moveUpDown;
-        transform.position += movement;
 
         float pitch = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
         float yaw = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
         float roll = 0;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))  
-            roll = rotationSpeed * Time.deltaTime;
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))  
-            roll = -rotationSpeed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            currentRollVelocity += rollAcceleration * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            currentRollVelocity -= rollAcceleration * Time.deltaTime;
+        }
+        else
+        {
+            if (currentRollVelocity > 0)
+                currentRollVelocity -= rollDamping * Time.deltaTime;
+            else if (currentRollVelocity < 0)
+                currentRollVelocity += rollDamping * Time.deltaTime;
 
-        transform.Rotate(pitch, yaw, roll, Space.Self);
+            if (Mathf.Abs(currentRollVelocity) < 0.1f)
+                currentRollVelocity = 0f;
+        }
+
+        currentRollVelocity = Mathf.Clamp(currentRollVelocity, -rotationSpeed, rotationSpeed);
+        transform.Rotate(pitch, yaw, currentRollVelocity * Time.deltaTime, Space.Self);
     }
 }
