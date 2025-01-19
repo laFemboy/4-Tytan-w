@@ -145,6 +145,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &23228652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23228649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647ce7cbf3550f44a99fbda669ceaf8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
 --- !u!1 &197277230
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,9 +520,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1403501012645052, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1507687924087172, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
       propertyPath: m_Name
       value: Prefab1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507687924087172, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749244555434578, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985597585005890, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4677498218072188, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
       propertyPath: m_LocalScale.x
@@ -570,6 +599,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1507687924087172, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 23228651}
+    - targetCorrespondingSourceObject: {fileID: 1507687924087172, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 23228652}
   m_SourcePrefab: {fileID: 100100000, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -649,8 +681,11 @@ MonoBehaviour:
   rollDamping: 300
   laserPrefab: {fileID: 1469714352018967729, guid: b9f16a561edd05249b82810a95a8f36d, type: 3}
   laserSpawnPoint: {fileID: 448347019}
-  laserSpeed: 30
-  laserLifeTime: 2
+  laserSpeed: 20
+  laserLifeTime: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1001 &1360275833
 PrefabInstance:
   m_ObjectHideFlags: 0

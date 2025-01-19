@@ -9,9 +9,11 @@ public class SpaceshipController : MonoBehaviour
     public float rollDamping;
 
     public GameObject laserPrefab; // Prefab lasera
-    public Transform laserSpawnPoint; // Punkt, z kt�rego wystrzeliwany jest laser
-    public float laserSpeed = 20f; // Pr�dko�� lasera
-    public float laserLifeTime = 2f; // Czas �ycia lasera
+    public Transform laserSpawnPoint; // Punkt, z którego wystrzeliwany jest laser
+    public float laserSpeed = 20f; // Prędkość lasera
+    public float laserLifeTime = 2f; // Czas życia lasera
+
+    public LayerMask enemyLayer; // Warstwa, na której znajdują się przeciwnicy
 
     private float currentSpeed;
     private float currentRollVelocity;
@@ -80,13 +82,29 @@ public class SpaceshipController : MonoBehaviour
 
             if (laserRb != null)
             {
-                // Nadajemy laserowi prędkość w kierunku, w którym patrzy statek
-                laserRb.linearVelocity = transform.forward * laserSpeed; // Zamiast laserSpawnPoint.forward, używamy transform.forward
+                // Szukamy najbliższego przeciwnika
+                Collider[] enemies = Physics.OverlapSphere(transform.position, 100f, enemyLayer);
+                Transform target = null;
+                if (enemies.Length > 0)
+                {
+                    // Przeciwnik to pierwszy znaleziony obiekt
+                    target = enemies[0].transform;
+
+                    // Obliczamy kierunek do przeciwnika
+                    Vector3 directionToTarget = (target.position - laser.transform.position).normalized;
+
+                    // Nadajemy prędkość w kierunku przeciwnika
+                    laserRb.linearVelocity = directionToTarget * laserSpeed;
+                }
+                else
+                {
+                    // Jeśli nie ma przeciwnika, laser leci w normalnym kierunku
+                    laserRb.linearVelocity = transform.forward * laserSpeed;
+                }
             }
 
             // Usuwamy laser po określonym czasie życia
             Destroy(laser, laserLifeTime);
         }
     }
-
 }
