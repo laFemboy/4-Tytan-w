@@ -7,7 +7,8 @@ public class SpaceshipController : MonoBehaviour
     public float rotationSpeed;
     public float rollAcceleration;
     public float rollDamping;
-
+    public GameObject laserPrefab; // Prefab lasera
+    public Transform laserSpawnPoint; // Punkt, z którego laser bêdzie wystrzeliwany
 
     private float currentSpeed;
     private float currentRollVelocity;
@@ -56,7 +57,18 @@ public class SpaceshipController : MonoBehaviour
         currentRollVelocity = Mathf.Clamp(currentRollVelocity, -rotationSpeed, rotationSpeed);
         transform.Rotate(pitch, yaw, currentRollVelocity * Time.deltaTime, Space.Self);
 
+        // Wystrzeliwanie lasera
+        if (Input.GetMouseButtonDown(0)) // Lewy przycisk myszy
+        {
+            FireLaser();
+        }
     }
 
-
+    void FireLaser()
+    {
+        if (laserPrefab != null && laserSpawnPoint != null)
+        {
+            Instantiate(laserPrefab, laserSpawnPoint.position, laserSpawnPoint.rotation);
+        }
+    }
 }
