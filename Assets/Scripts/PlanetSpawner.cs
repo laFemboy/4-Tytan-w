@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PlanetSpawner : MonoBehaviour
 {
-    public GameObject planetPrefab;
-    public int numberOfPlanets;
-    public Vector3 spawnArea = new Vector3(100, 100, 100);
+    public List<GameObject> planetPrefabs; // Lista prefabów planet
+    public int numberOfPlanets; // Liczba planet do stworzenia
+    public Vector3 spawnArea = new Vector3(100, 100, 100); // Obszar spawnowania
 
     void Start()
     {
@@ -22,17 +22,11 @@ public class PlanetSpawner : MonoBehaviour
                 Random.Range(-spawnArea.z / 2, spawnArea.z / 2)
             );
 
-            GameObject newPlanet = Instantiate(planetPrefab, randomPosition, Quaternion.identity);
+            // Wybierz losowy prefab z listy
+            GameObject randomPlanetPrefab = planetPrefabs[Random.Range(0, planetPrefabs.Count)];
 
-            Renderer renderer = newPlanet.GetComponent<Renderer>();
-            if (renderer != null)
-            {
-                renderer.material.color = new Color(
-                    Random.Range(0f, 1f), 
-                    Random.Range(0f, 1f), 
-                    Random.Range(0f, 1f)  
-                );
-            }
+            // Stwórz now¹ planetê
+            Instantiate(randomPlanetPrefab, randomPosition, Quaternion.identity);
         }
     }
 }

@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
-    public float moveSpeed;          
-    public float sprintMultiplier;   
+    public float moveSpeed;
+    public float sprintMultiplier;
     public float rotationSpeed;
     public float rollAcceleration;
     public float rollDamping;
+    public GameObject laserPrefab; // Prefab lasera
+    public Transform laserSpawnPoint; // Punkt, z którego laser bêdzie wystrzeliwany
 
     private float currentSpeed;
     private float currentRollVelocity;
@@ -17,12 +19,11 @@ public class SpaceshipController : MonoBehaviour
         Cursor.visible = false;
     }
 
-
     void Update()
     {
         currentSpeed = Input.GetKey(KeyCode.LeftShift) ? moveSpeed * sprintMultiplier : moveSpeed;
 
-        //float moveHorizontal = Input.GetAxis("Horizontal");
+        // Ruch statku
         float moveHorizontal = 0;
         float moveVertical = Input.GetAxis("Vertical");
         float moveUpDown = 0;
@@ -30,10 +31,9 @@ public class SpaceshipController : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, moveUpDown, moveVertical);
         transform.Translate(movement * currentSpeed * Time.deltaTime, Space.Self);
 
-
+        // Rotacja statku
         float pitch = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
         float yaw = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-        //float roll = 0;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -56,5 +56,19 @@ public class SpaceshipController : MonoBehaviour
 
         currentRollVelocity = Mathf.Clamp(currentRollVelocity, -rotationSpeed, rotationSpeed);
         transform.Rotate(pitch, yaw, currentRollVelocity * Time.deltaTime, Space.Self);
+
+        // Wystrzeliwanie lasera
+        if (Input.GetMouseButtonDown(0)) // Lewy przycisk myszy
+        {
+            FireLaser();
+        }
+    }
+
+    void FireLaser()
+    {
+        if (laserPrefab != null && laserSpawnPoint != null)
+        {
+            Instantiate(laserPrefab, laserSpawnPoint.position, laserSpawnPoint.rotation);
+        }
     }
 }
