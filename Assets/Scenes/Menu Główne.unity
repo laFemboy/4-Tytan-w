@@ -276,7 +276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -189.34}
+  m_AnchoredPosition: {x: 0, y: -160}
   m_SizeDelta: {x: 200.6, y: 47.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72749560
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 76491838}
   - component: {fileID: 76491837}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: wsad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,7 +407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 201.13, y: 78.2}
+  m_AnchoredPosition: {x: 201.13, y: 150}
   m_SizeDelta: {x: 351.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &76491837
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 325447499}
   - component: {fileID: 325447498}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: "G\xF3ra/D\xF3\u0142"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -681,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210.2, y: 1.7}
+  m_AnchoredPosition: {x: -210.2, y: 55}
   m_SizeDelta: {x: 351.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &325447498
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Do g\xF3ry/W d\xF3\u0142"
+  m_text: "Do g\xF3ry / d\xF3\u0142\nW prawo / lewo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 616404013}
   - component: {fileID: 616404012}
   m_Layer: 5
-  m_Name: Text (TMP) (5)
+  m_Name: Przyspieszenie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1086,7 +1086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -207.3, y: -85.6}
+  m_AnchoredPosition: {x: -207.3, y: -50}
   m_SizeDelta: {x: 351.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616404012
@@ -1200,7 +1200,7 @@ GameObject:
   - component: {fileID: 775303224}
   - component: {fileID: 775303223}
   m_Layer: 5
-  m_Name: Text (TMP) (4)
+  m_Name: Shift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1222,7 +1222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 201.13, y: -85.6}
+  m_AnchoredPosition: {x: 201.13, y: -50}
   m_SizeDelta: {x: 351.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775303223
@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 942447580}
   - component: {fileID: 942447579}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Mysz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1403,7 +1403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 201.13, y: 1.7}
+  m_AnchoredPosition: {x: 201.13, y: 55}
   m_SizeDelta: {x: 351.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &942447579
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Q/E
+  m_text: "Mysz - D\xF3\u0142 / G\xF3ra\nMysz- Prawo / Lewo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1957,7 +1957,7 @@ GameObject:
   - component: {fileID: 1281090631}
   - component: {fileID: 1281090630}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Sterowanie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2112,12 +2112,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1281090629}
+  - {fileID: 1897722393}
   - {fileID: 76491836}
+  - {fileID: 325447497}
   - {fileID: 942447578}
   - {fileID: 775303222}
   - {fileID: 616404011}
-  - {fileID: 325447497}
-  - {fileID: 1897722393}
   - {fileID: 72749559}
   m_Father: {fileID: 2096081489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2176,7 +2176,7 @@ GameObject:
   - component: {fileID: 1897722395}
   - component: {fileID: 1897722394}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Poruszanie Statkiem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2198,7 +2198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -189.3, y: 78.2}
+  m_AnchoredPosition: {x: -189.3, y: 150}
   m_SizeDelta: {x: 567.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1897722394
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sterowanie Standardowe
+  m_text: Poruszanie Statkiem
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
