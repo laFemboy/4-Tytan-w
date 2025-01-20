@@ -118,12 +118,12 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MainScrollSpeedU: -10
+    - _MainScrollSpeedU: 30
     - _MainScrollSpeedV: 0
     - _MainTexMultiplier: 1
-    - _MainTexPow: 1
-    - _MainTexVFade: 0
-    - _MainTexVFadePow: 1
+    - _MainTexPow: 1.15
+    - _MainTexVFade: 1
+    - _MainTexVFadePow: 0.03
     - _Metallic: 0
     - _Mode: 0
     - _Multiplier: 5.61
