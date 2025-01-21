@@ -962,6 +962,58 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1069386438}
   m_SourcePrefab: {fileID: 100100000, guid: 70bc6b6358059e04bbf40b0ecb70b375, type: 3}
+--- !u!1 &1436533054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436533056}
+  - component: {fileID: 1436533055}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1436533055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436533054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857cbb75b0a4bb04880aee7a4f332ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1507687924087172, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
+  minGroupSize: 2
+  maxGroupSize: 5
+  spawnRadius: 50
+  spawnInterval: 5
+  mapCenter: {x: 0, y: 0, z: 0}
+  mapSize: {x: 100, y: 100, z: 100}
+--- !u!4 &1436533056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436533054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.294349, y: -0.64349985, z: -0.31398106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1507950894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,3 +1277,4 @@ SceneRoots:
   - {fileID: 1509284506}
   - {fileID: 330585546}
   - {fileID: 1360275833}
+  - {fileID: 1436533056}

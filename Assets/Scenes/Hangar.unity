@@ -1899,7 +1899,8 @@ Transform:
   m_LocalPosition: {x: -266.27966, y: 75.78414, z: 380.81116}
   m_LocalScale: {x: 1, y: 1.21, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 801917154}
   m_Father: {fileID: 568757086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &555942964
@@ -2335,6 +2336,8 @@ MonoBehaviour:
   Cozrobic: {fileID: 1603091717}
   AlePaskudny: {fileID: 449374156}
   SpecjalneZlecenia: {fileID: 987245313}
+  player: {fileID: 347252311}
+  interactionDistance: 3
 --- !u!4 &801917154
 Transform:
   m_ObjectHideFlags: 0
@@ -2343,12 +2346,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801917152}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 503.77386, y: 101.17684, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.82644624, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 555942963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &814999803 stripped
 GameObject:
@@ -7062,5 +7065,4 @@ SceneRoots:
   - {fileID: 267536705}
   - {fileID: 69351172}
   - {fileID: 981454908}
-  - {fileID: 801917154}
   - {fileID: 1085373453}
