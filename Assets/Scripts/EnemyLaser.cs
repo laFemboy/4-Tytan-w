@@ -4,6 +4,7 @@ public class EnemyLaser : MonoBehaviour
 {
     public float speed = 20f; // Prêdkoœæ lasera
     public float lifetime = 2f; // Czas ¿ycia lasera
+    public int damage = 10; // Iloœæ zadawanych obra¿eñ
 
     void Start()
     {
@@ -20,11 +21,13 @@ public class EnemyLaser : MonoBehaviour
         // SprawdŸ, czy obiekt ma tag "Player"
         if (other.CompareTag("Player"))
         {
-            // Mo¿esz dodaæ kod reaguj¹cy na trafienie gracza, np. wyœwietlanie efektu trafienia lub inne dzia³anie
-            Debug.Log("Gracz zosta³ trafiony przez laser wroga!");
-
-            // Mo¿esz tu dodaæ dodatkow¹ logikê, np. zadawanie obra¿eñ graczowi, jeœli chcesz
-            // Gracz nie otrzymuje obra¿eñ w tym przyk³adzie, ale mo¿esz dodaæ odpowiedni skrypt w tym miejscu
+            // ZnajdŸ komponent gracza, który mo¿e przyj¹æ obra¿enia
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage); // Zadaj obra¿enia graczowi
+                Debug.Log("Gracz zosta³ trafiony przez laser wroga! Zada³em " + damage + " obra¿eñ.");
+            }
         }
 
         // Zniszcz laser po kontakcie
