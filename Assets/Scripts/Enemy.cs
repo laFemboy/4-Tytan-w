@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100; // Maksymalne zdrowie przeciwnika
     private int currentHealth; // Obecne zdrowie przeciwnika
-
+    public BossSpawner bossSpawner;
     void Start()
     {
         currentHealth = maxHealth; // Inicjalizuj zdrowie na maksymalne
@@ -24,6 +24,10 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Debug.Log($"Przeciwnik {gameObject.name} zosta³ zniszczony!");
+        if (bossSpawner != null)
+        {
+            bossSpawner.EnemyDestroyed();
+        }
         Destroy(gameObject);
     }
 }

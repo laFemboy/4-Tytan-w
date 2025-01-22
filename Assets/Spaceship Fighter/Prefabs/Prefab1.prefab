@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  bossSpawner: {fileID: 0}
 --- !u!136 &-7315311237787802244
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ MonoBehaviour:
   moveSpeed: 15
   rotationSpeed: 5
   changeDirectionInterval: 3
-  laserPrefab: {fileID: 5788942878579454660, guid: a9fdc2e7e515b8e448887399f59adfdc, type: 3}
+  laserPrefab: {fileID: 4659327050777149464, guid: de2a3bfeab0c4bd40a454fc9e438f91a, type: 3}
   shootingPoint: {fileID: 2100193310150098478}
   shootingRange: 15
   shootingInterval: 2

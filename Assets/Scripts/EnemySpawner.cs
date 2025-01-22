@@ -14,6 +14,9 @@ public class EnemySpawner : MonoBehaviour
     public Vector3 mapCenter = Vector3.zero; // Œrodek mapy
     public Vector3 mapSize = new Vector3(100f, 100f, 100f); // Rozmiar mapy
 
+    [Header("Boss Spawner Reference")]
+    public BossSpawner bossSpawner; // Referencja do BossSpawner
+
     private float spawnTimer;
 
     void Start()
@@ -57,7 +60,14 @@ public class EnemySpawner : MonoBehaviour
             spawnPosition = new Vector3(spawnPosition.x, Mathf.Clamp(spawnPosition.y, mapCenter.y - mapSize.y / 2, mapCenter.y + mapSize.y / 2), spawnPosition.z);
 
             GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            GameObject enemyInstance = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+
+            // Przypisz referencjê do BossSpawner w przeciwniku
+            Enemy enemy = enemyInstance.GetComponent<Enemy>();
+            if (enemy != null && bossSpawner != null)
+            {
+                enemy.bossSpawner = bossSpawner;
+            }
         }
     }
 
