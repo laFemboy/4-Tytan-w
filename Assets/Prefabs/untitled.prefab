@@ -257,15 +257,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rotationSpeed: 20
-  stoppingDistance: 5
-  laserPrefab: {fileID: 4659327050777149464, guid: de2a3bfeab0c4bd40a454fc9e438f91a, type: 3}
+  stoppingDistance: 20
+  laserPrefab: {fileID: 3083282711282742260, guid: 3460b2f1c7411084981efa53f3139b7f, type: 3}
   shootingPoints:
   - {fileID: 7990573219871123119}
   - {fileID: 6295463614452256972}
   - {fileID: 5084649086861165316}
   - {fileID: 5850140366718225825}
-  shootingRange: 100
-  shootingInterval: 1.5
+  shootingRange: 150
+  shootingInterval: 0.45
 --- !u!54 &4382818060915601461
 Rigidbody:
   m_ObjectHideFlags: 0
